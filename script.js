@@ -37,10 +37,10 @@ function setFillingStyle(element) {
   } else {
     if (index == -1) {
       element.style.backgroundColor = colors[0];
-      element.innerText = index++;
+      element.value = index++;
     } else {
       element.style.backgroundColor = colors[index + 1];
-      element.innerText = index++;
+      element.value = index++;
     }
   }
 }
@@ -53,7 +53,7 @@ function fillTheGrid(number = 16) {
   for (let i = 0; i < numSquare; i++) {
     let newDiv = document.createElement("div");
     newDiv.style.backgroundColor = "white";
-    newDiv.innerText = 0;
+    newDiv.value = 0;
     newDiv.addEventListener("mouseleave", () => setFillingStyle(newDiv));
     mainContainer.appendChild(newDiv);
   }
